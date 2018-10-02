@@ -1,0 +1,34 @@
+\ProvidesFile{frontmatterlevels.def}[2017/03/14 frontmatterlevels]
+
+\newcounter{frontmatter.chapter.counter}
+\def\chapter{
+	\if@openright
+		\cleardoublepage
+	\else
+		\clearpage
+	\fi
+	\thispagestyle{plain}
+	\global\@topnum\z@
+	\@afterindentfalse
+	\@ifstar{\@dblarg{\@fschapter}}{\@dblarg{\@fchapter}}
+}
+\def\@fchapter[##1]##2{
+	\addcontentsline{toc}{chapter}{##2}
+	\chaptermark{##1}
+	\if@twocolumn
+		\@topnewpage[\@makeschapterhead{##2}]%
+	\else
+		\@makeschapterhead{##2}%
+		\@afterheading
+	\fi
+}
+\def\@fschapter[##1]##2{
+	\pdfbookmark[0]{##2}{toc}
+	\chaptermark{##1}
+	\if@twocolumn
+		\@topnewpage[\@makeschapterhead{##2}]%
+	\else
+		\@makeschapterhead{##2}%
+		\@afterheading
+	\fi
+}
