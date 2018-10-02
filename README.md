@@ -1,2 +1,3 @@
-# thesis
-Custom LaTeX document class for writing a thesis.
+# LaTeX Document Classes
+Custom Document Classes for LaTeX:
+- Thesis

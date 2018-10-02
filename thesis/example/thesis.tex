@@ -1,0 +1,56 @@
+% !TeX root = thesis.tex
+
+\documentclass[11pt]{thesis}
+% encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% change geometry setup; \usepackage[<...>]{geometry} could lead to option clash!
+\geometry{width=150mm,top=25mm,bottom=25mm}
+% change hyperref setup; \usepackage[<...>]{hyperref} could lead to option clash!
+\hypersetup{hidelinks,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+
+% other
+\usepackage{lipsum} % inclusion of blind text
+
+% title
+\setthesistype{Master's Thesis}
+\settitle{The Title of an Awesome Thesis}
+\setauthor{John Doe Jr.}
+\setsupervisor{Prof. Dr. John Doe Sr.}
+\setinstitutionlogo{uzh_logo_d_pos.pdf}
+\setinstitution{University of Zurich \\ Faculty of Science \\ Department of Chemistry}
+\makepdfmetadata
+
+\begin{document}
+	\maketitle
+	
+	\begin{frontmatter}
+		\chapter{Abstract}
+		\lipsum[77-78]
+		\chapter{Summary}
+		\lipsum[77-90]
+		\tableofcontents % add table of contents
+	\end{frontmatter}
+	
+	\chapter{First Chapter}
+		\section{First Section}
+			\paragraph{Paragraph 1}
+			\lipsum[1-2]
+			\paragraph{Paragraph 2}
+			\lipsum[3]
+			\paragraph{Paragraph 3}
+			\lipsum[4-5]
+		\section{Second Section}
+			\lipsum[6]
+		\section{Third Section}
+			\lipsum[7-9]
+	\chapter{Second Chapter}
+		\section[S1]{First Section}
+			\lipsum[11-12]
+		\section{Second Section}
+			\lipsum[13-14]
+		\clearpage
+		\section[3rd Sec]{Third Section}
+		\sectionmark{kk}
+			\lipsum[15-17]
+\end{document}
